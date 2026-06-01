@@ -152,6 +152,7 @@ if (flavorTrack && flavorPrev && flavorNext) {
 
 /* Cart builder carousel */
 
+const cartBuilder = document.querySelector(".cart-flavor-builder");
 const cartBuilderTrack = document.querySelector("[data-cart-builder-track]");
 const cartBuilderPrev = document.querySelector("[data-cart-builder-prev]");
 const cartBuilderNext = document.querySelector("[data-cart-builder-next]");
@@ -178,55 +179,112 @@ function scrollCartBuilder(direction) {
   });
 }
 
-function handleCartBuilderArrow(event, direction) {
-  if (event) {
-    event.preventDefault();
-    event.stopPropagation();
+function stopCartBuilderEvent(event) {
+  event.preventDefault();
+  event.stopPropagation();
 
-    if (typeof event.stopImmediatePropagation === "function") {
-      event.stopImmediatePropagation();
+  if (typeof event.stopImmediatePropagation === "function") {
+    event.stopImmediatePropagation();
+  }
+}
+
+function getEventPoint(event) {
+  if (event.changedTouches && event.changedTouches.length) {
+    return {
+      x: event.changedTouches[0].clientX,
+      y: event.changedTouches[0].clientY,
+    };
+  }
+
+  if (event.touches && event.touches.length) {
+    return {
+      x: event.touches[0].clientX,
+      y: event.touches[0].clientY,
+    };
+  }
+
+  return {
+    x: event.clientX,
+    y: event.clientY,
+  };
+}
+
+function pointIsInsideElement(element, x, y) {
+  if (!element) return false;
+
+  const rect = element.getBoundingClientRect();
+
+  return (
+    x >= rect.left &&
+    x <= rect.right &&
+    y >= rect.top &&
+    y <= rect.bottom
+  );
+}
+
+function findBuilderElementAtPoint(selector, x, y) {
+  if (!cartBuilder) return null;
+
+  const elements = cartBuilder.querySelectorAll(selector);
+
+  for (const element of elements) {
+    if (pointIsInsideElement(element, x, y)) {
+      return element;
     }
   }
 
-  scrollCartBuilder(direction);
+  return null;
 }
 
-function bindCartBuilderArrow(button, direction) {
-  if (!button) return;
+function handleCartBuilderClick(event) {
+  if (!cartBuilder || !cartBuilderTrack) return;
 
-  let handledByPointer = false;
+  const point = getEventPoint(event);
 
-  button.addEventListener(
-    "pointerdown",
-    (event) => {
-      handledByPointer = true;
-      handleCartBuilderArrow(event, direction);
+  if (!pointIsInsideElement(cartBuilder, point.x, point.y)) {
+    return;
+  }
 
-      window.setTimeout(() => {
-        handledByPointer = false;
-      }, 400);
-    },
-    { passive: false }
-  );
+  const prevHit = findBuilderElementAtPoint("[data-cart-builder-prev]", point.x, point.y);
+  const nextHit = findBuilderElementAtPoint("[data-cart-builder-next]", point.x, point.y);
+  const addHit = findBuilderElementAtPoint(".cart-builder-add", point.x, point.y);
 
-  button.addEventListener("click", (event) => {
-    if (handledByPointer) {
-      event.preventDefault();
-      event.stopPropagation();
+  if (prevHit) {
+    stopCartBuilderEvent(event);
+    scrollCartBuilder(-1);
+    return;
+  }
 
-      if (typeof event.stopImmediatePropagation === "function") {
-        event.stopImmediatePropagation();
-      }
+  if (nextHit) {
+    stopCartBuilderEvent(event);
+    scrollCartBuilder(1);
+    return;
+  }
 
-      return;
-    }
+  if (addHit) {
+    stopCartBuilderEvent(event);
 
-    handleCartBuilderArrow(event, direction);
-  });
+    const originalText = addHit.textContent;
+    addHit.textContent = "Added";
+
+    window.setTimeout(() => {
+      addHit.textContent = originalText;
+    }, 700);
+
+    return;
+  }
+
+  /*
+    Safety guard:
+    If a mobile browser, overlay, stale link, or mis-targeted tap tries
+    to route a tap inside Build Your Box to another page, block it.
+  */
+  stopCartBuilderEvent(event);
 }
 
-bindCartBuilderArrow(cartBuilderPrev, -1);
-bindCartBuilderArrow(cartBuilderNext, 1);
+if (cartBuilder && cartBuilderTrack) {
+  document.addEventListener("click", handleCartBuilderClick, true);
+}
 
 /* Email offer popup + cookie banner */
 
