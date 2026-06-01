@@ -663,9 +663,12 @@
     border-radius: 24px;
   }
 
-    .cart-builder-head {
-    display: block;
-    margin-bottom: 10px;
+  .cart-builder-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
     padding: 0;
   }
 
@@ -674,15 +677,20 @@
   }
 
   .cart-builder-controls {
-    display: none;
+    display: flex;
+    gap: 8px;
+  }
+
+  .cart-builder-arrow {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    font-size: 1.8rem;
   }
 
   .cart-builder-mobile-hint {
-    display: block;
-    margin: -4px 0 12px;
-    color: var(--muted);
-    font-size: 0.78rem;
-    font-weight: 800;
+    display: none;
   }
 
   .cart-builder-scroll {
