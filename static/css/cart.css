@@ -106,6 +106,14 @@
   transform: translateY(-1px);
 }
 
+.cart-builder-arrow:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: 0 8px 18px rgba(8,36,71,0.08);
+}
+
 .cart-builder-scroll {
   display: flex;
   gap: 12px;

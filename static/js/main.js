@@ -170,13 +170,47 @@ function getCartBuilderScrollAmount() {
   return firstCard.getBoundingClientRect().width + gap;
 }
 
+function getCartBuilderMaxScroll() {
+  if (!cartBuilderTrack) return 0;
+
+  return Math.max(0, cartBuilderTrack.scrollWidth - cartBuilderTrack.clientWidth);
+}
+
+function clampCartBuilderScrollTarget(target) {
+  const maxScroll = getCartBuilderMaxScroll();
+
+  return Math.max(0, Math.min(target, maxScroll));
+}
+
+function updateCartBuilderArrowState() {
+  if (!cartBuilderTrack) return;
+
+  const maxScroll = getCartBuilderMaxScroll();
+  const currentScroll = cartBuilderTrack.scrollLeft;
+  const tolerance = 2;
+
+  if (cartBuilderPrev) {
+    cartBuilderPrev.disabled = currentScroll <= tolerance;
+  }
+
+  if (cartBuilderNext) {
+    cartBuilderNext.disabled = currentScroll >= maxScroll - tolerance;
+  }
+}
+
 function scrollCartBuilder(direction) {
   if (!cartBuilderTrack) return;
 
-  cartBuilderTrack.scrollBy({
-    left: direction * getCartBuilderScrollAmount(),
+  const currentScroll = cartBuilderTrack.scrollLeft;
+  const requestedTarget = currentScroll + direction * getCartBuilderScrollAmount();
+  const clampedTarget = clampCartBuilderScrollTarget(requestedTarget);
+
+  cartBuilderTrack.scrollTo({
+    left: clampedTarget,
     behavior: "smooth",
   });
+
+  window.setTimeout(updateCartBuilderArrowState, 320);
 }
 
 function stopCartBuilderEvent(event) {
@@ -251,13 +285,21 @@ function handleCartBuilderClick(event) {
 
   if (prevHit) {
     stopCartBuilderEvent(event);
-    scrollCartBuilder(-1);
+
+    if (!prevHit.disabled) {
+      scrollCartBuilder(-1);
+    }
+
     return;
   }
 
   if (nextHit) {
     stopCartBuilderEvent(event);
-    scrollCartBuilder(1);
+
+    if (!nextHit.disabled) {
+      scrollCartBuilder(1);
+    }
+
     return;
   }
 
@@ -284,6 +326,19 @@ function handleCartBuilderClick(event) {
 
 if (cartBuilder && cartBuilderTrack) {
   document.addEventListener("click", handleCartBuilderClick, true);
+
+  cartBuilderTrack.addEventListener(
+    "scroll",
+    () => {
+      window.requestAnimationFrame(updateCartBuilderArrowState);
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("resize", updateCartBuilderArrowState);
+  window.addEventListener("load", updateCartBuilderArrowState);
+
+  updateCartBuilderArrowState();
 }
 
 /* Email offer popup + cookie banner */
