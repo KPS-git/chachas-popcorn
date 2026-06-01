@@ -6,7 +6,17 @@ SECRET_KEY = "local-dev-only-chachas-popcorn"
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "chachas-popcorn.vercel.app",
+    ".vercel.app",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://chachas-popcorn.vercel.app",
+    "https://*.vercel.app",
+]
 
 INSTALLED_APPS = [
     "storefront",
