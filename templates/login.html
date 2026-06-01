@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Sign In | ChaCha's Popcorn{% endblock %}
+{% block description %}Sign in or create a ChaCha's Popcorn account to view orders and manage your details.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/popcorn-bg.html" %}
+
+
+<section class="auth-section">
+  <div class="section-inner auth-layout">
+    <div class="auth-copy reveal-on-scroll">
+      <p class="eyebrow">ChaCha’s Account</p>
+      <h1>Track orders, save details, and come back hungry.</h1>
+      <p>
+        Sign in to view your order history, manage saved addresses, and make future popcorn orders faster.
+      </p>
+
+      <div class="auth-benefits">
+        <span>Order history</span>
+        <span>Saved addresses</span>
+        <span>Faster checkout</span>
+      </div>
+    </div>
+
+    <div class="auth-card reveal-on-scroll">
+      <div class="auth-tabs" aria-label="Account options">
+        <button class="auth-tab is-active" type="button">Sign In</button>
+        <button class="auth-tab" type="button">Create Account</button>
+      </div>
+
+      <form class="auth-form" action="#" method="post">
+        {% csrf_token %}
+
+        <label>
+          Email address
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+
+        <label>
+          Password
+          <input type="password" name="password" placeholder="Enter password" required>
+        </label>
+
+        <div class="auth-options">
+          <label class="remember-row">
+            <input type="checkbox" name="remember_me">
+            <span>Remember me</span>
+          </label>
+
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <button class="button primary auth-submit" type="submit">Sign In</button>
+
+        <p class="auth-disclaimer">
+          Account login will be connected to Django authentication. This form is currently a frontend shell.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="auth-support-section">
+  <div class="section-inner auth-support-grid">
+    <div class="auth-support-card reveal-on-scroll">
+      <h3>Faster ordering</h3>
+      <p>Returning customers can eventually reuse account details for a smoother checkout experience.</p>
+    </div>
+
+    <div class="auth-support-card reveal-on-scroll">
+      <h3>Order visibility</h3>
+      <p>The account dashboard gives customers a clear place to review recent orders and status.</p>
+    </div>
+
+    <div class="auth-support-card reveal-on-scroll">
+      <h3>Secure foundation</h3>
+      <p>Django can handle authentication while Stripe handles payment securely.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

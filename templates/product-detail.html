@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ product.name }} | ChaCha's Popcorn{% endblock %}
+{% block description %}Shop {{ product.name }} popcorn from ChaCha's Popcorn. Fresh, flavorful Chicago popcorn made for sharing.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/popcorn-bg.html" %}
+
+<section class="product-detail-hero">
+  <div class="section-inner product-detail-grid">
+    <div class="product-gallery reveal-on-scroll">
+      <div class="product-main-image">
+        <img src="{% static product.image %}" alt="{{ product.name }} popcorn">
+        <span>{{ product.badge }}</span>
+      </div>
+
+      <div class="product-thumbnail-row">
+        <button type="button" class="product-thumb is-active">
+          <img src="{% static product.image %}" alt="{{ product.name }} popcorn preview">
+        </button>
+
+        <button type="button" class="product-thumb">
+          <img src="{% static 'images/hero-popcorn.jpg' %}" alt="Popcorn texture preview">
+        </button>
+
+        <button type="button" class="product-thumb">
+          <img src="{% static 'images/chachas-hero-logo.png' %}" alt="ChaCha's Popcorn logo preview">
+        </button>
+      </div>
+    </div>
+
+    <div class="product-buy-box reveal-on-scroll">
+      <a class="back-link" href="/shop/">← Back to Shop</a>
+
+      <p class="eyebrow">{{ product.badge }}</p>
+      <h1>{{ product.name }}</h1>
+      <p class="product-subtitle">{{ product.subtitle }}</p>
+
+      <div class="product-rating-row" aria-label="Customer rating">
+        <span>★★★★★</span>
+        <p>Small-batch favorite</p>
+      </div>
+
+      <div class="product-price-row">
+        <strong>{{ product.price }}</strong>
+        <span>{{ product.size|default:"12 oz bag" }}</span>
+      </div>
+
+      <p class="product-description">
+        {{ product.description }}
+      </p>
+
+      <div class="flavor-note-grid">
+        {% for note in product.notes %}
+        <span>{{ note }}</span>
+        {% endfor %}
+      </div>
+
+      <div class="purchase-panel">
+        <div class="quantity-control" aria-label="Quantity selector">
+          <button type="button">−</button>
+          <span>1</span>
+          <button type="button">+</button>
+        </div>
+
+        <a class="button primary add-cart-button" href="/cart/">Add to Cart</a>
+      </div>
+
+      <div class="product-trust-row">
+        <span>Fresh packed</span>
+        <span>Secure checkout</span>
+        <span>Ships from Chicago</span>
+      </div>
+
+      <div class="product-mini-disclosures">
+        <div>
+          <strong>Net Weight</strong>
+          <span>{{ product.net_weight|default:"12 oz" }}</span>
+        </div>
+
+        <div>
+          <strong>Ships</strong>
+          <span>{{ product.shipping_timeline|default:"2–5 business days" }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-intel-section">
+  <div class="section-inner">
+    <div class="product-section-heading reveal-on-scroll">
+      <p class="eyebrow">Product Details</p>
+      <h2>Everything important, before you order.</h2>
+      <p>
+        Ingredients, allergens, nutrition, freshness, shipping, and return details in one place.
+      </p>
+    </div>
+
+    <div class="product-intel-compact reveal-on-scroll">
+      <div class="intel-summary-card">
+        <div>
+          <p class="eyebrow">At a Glance</p>
+          <h3>{{ product.name }}</h3>
+          <p>
+            {{ product.flavor_profile|default:"A bold, snackable popcorn flavor made for easy sharing, fast gifting, and repeat cravings." }}
+          </p>
+        </div>
+
+        <div class="intel-facts">
+          <div>
+            <span>Bag Size</span>
+            <strong>{{ product.net_weight|default:"12 oz" }}</strong>
+          </div>
+
+          <div>
+            <span>Ships</span>
+            <strong>{{ product.shipping_timeline|default:"2–5 business days" }}</strong>
+          </div>
+
+          <div>
+            <span>Freshness</span>
+            <strong>{{ product.shelf_life_short|default:"Best by package date" }}</strong>
+          </div>
+        </div>
+
+        <div class="intel-pill-row">
+          {% for note in product.notes %}
+          <span>{{ note }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="product-detail-accordion">
+        <details open>
+          <summary>
+            <span>Ingredients</span>
+            <strong>+</strong>
+          </summary>
+          <p>
+            {{ product.ingredients|default:"Popcorn, oil, seasoning, and salt. Final ingredient list should match the product package." }}
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            <span>Allergens</span>
+            <strong>+</strong>
+          </summary>
+          <p>
+            {{ product.allergens|default:"Please review the final package label for allergen information before consuming." }}
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            <span>Nutrition Facts</span>
+            <strong>+</strong>
+          </summary>
+          <p>
+            {{ product.nutrition_facts|default:"Nutrition information will be provided according to the final product label." }}
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            <span>Storage and Shelf Life</span>
+            <strong>+</strong>
+          </summary>
+          <p>
+            {{ product.storage|default:"Store sealed in a cool, dry place. Reseal after opening." }}
+            {{ product.shelf_life|default:"Best enjoyed by the date printed on the package." }}
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            <span>Shipping and Returns</span>
+            <strong>+</strong>
+          </summary>
+          <p>
+            {{ product.shipping_note|default:"Orders typically ship within 2–5 business days." }}
+            {{ product.returns_note|default:"Because popcorn is a food product, opened items cannot be returned. Damaged or incorrect orders can be reviewed with photos and order number." }}
+          </p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-bundle-section">
+  <div class="section-inner">
+    <div class="product-bundle-card reveal-on-scroll">
+      <div>
+        <p class="eyebrow">Best First Order</p>
+        <h2>Not sure which flavor to choose?</h2>
+        <p>Try Original, Cheddar, and Caramel together in one starter box.</p>
+      </div>
+
+      <a class="button light" href="/shop/#bundle">Build a Box</a>
+    </div>
+  </div>
+</section>
+
+<section class="related-products-section">
+  <div class="section-inner">
+    <div class="related-heading reveal-on-scroll">
+      <p class="eyebrow">Keep Browsing</p>
+      <h2>You may also like.</h2>
+    </div>
+
+    <div class="related-grid">
+      {% for item in related_products %}
+      <a class="related-card reveal-on-scroll" href="/product/{{ item.slug }}/">
+        <img src="{% static item.image %}" alt="{{ item.name }} popcorn">
+        <div>
+          <span>{{ item.badge }}</span>
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.price }} / {{ item.size }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

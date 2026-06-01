@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}ChaCha's Popcorn | Chicago Popcorn, Small-Batch Flavor{% endblock %}
+{% block description %}Shop ChaCha's Popcorn, a Chicago-born popcorn brand serving Original, Cheddar, and Caramel popcorn with small-batch care and big hometown flavor.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/popcorn-bg.html" %}
+
+
+<section class="hero">
+  <div class="hero-background" aria-hidden="true"></div>
+
+  <div class="hero-card reveal-on-scroll">
+    <img class="hero-logo" src="{% static 'images/chachas-hero-logo.png' %}" alt="ChaCha's Popcorn">
+
+    <p class="hero-kicker">
+  Small batch. Big flavor. Family owned. Chicago popcorn made fresh since 1985.
+</p>
+
+    <div class="hero-actions">
+      <a class="button primary" href="/shop/">Shop Popcorn</a>
+      <a class="button secondary light-outline" href="#featured-flavors">See Flavors</a>
+    </div>
+  </div>
+</section>
+
+<section class="featured-section" id="featured-flavors">
+  <div class="section-inner">
+    <div class="section-heading reveal-on-scroll">
+      <p class="eyebrow">Featured Flavors</p>
+      <h1>Start with the classics.</h1>
+      <p>Our three signature flavors are designed for easy discovery, fast checkout, and repeat cravings.</p>
+    </div>
+
+    <div class="featured-grid">
+      <article class="featured-card featured-card-large reveal-on-scroll">
+        <a href="/product/caramel/" aria-label="View Caramel popcorn">
+          <div class="featured-image-wrap">
+            <img src="{% static 'images/caramel-popcorn.jpg' %}" alt="Caramel popcorn">
+          </div>
+
+          <div class="featured-content">
+            <p class="product-tag">Featured</p>
+            <h2>Caramel</h2>
+            <p class="flavor-copy">
+              Deep golden caramel, glossy crunch, and that sweet toasted finish that makes one handful turn into the whole bag.
+            </p>
+
+            <div class="flavor-pills">
+              <span>Sweet Crunch</span>
+              <span>Golden Glaze</span>
+              <span>Fan Favorite</span>
+            </div>
+
+            <span class="product-link">Shop Caramel</span>
+          </div>
+        </a>
+      </article>
+
+      <div class="featured-stack">
+        <article class="featured-card reveal-on-scroll">
+          <a href="/product/cheddar/" aria-label="View Cheddar popcorn">
+            <div class="featured-image-wrap">
+              <img src="{% static 'images/cheddar-popcorn.jpg' %}" alt="Cheddar popcorn">
+            </div>
+
+            <div class="featured-content">
+              <p class="product-tag">Savory</p>
+              <h2>Cheddar</h2>
+              <p class="flavor-copy">
+                Bold cheddar dusted over crisp popcorn for a rich, savory bite that hits immediately.
+              </p>
+
+              <div class="flavor-pills">
+                <span>Cheesy</span>
+                <span>Bold</span>
+                <span>Salty</span>
+              </div>
+
+              <span class="product-link">Shop Cheddar</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="featured-card reveal-on-scroll">
+          <a href="/product/original/" aria-label="View Original popcorn">
+            <div class="featured-image-wrap">
+              <img src="{% static 'images/original-popcorn.jpg' %}" alt="Original popcorn">
+            </div>
+
+            <div class="featured-content">
+              <p class="product-tag">Classic</p>
+              <h2>Original</h2>
+              <p class="flavor-copy">
+                Light, buttery, crisp, and clean. The timeless snack that keeps things simple for a reason.
+              </p>
+
+              <div class="flavor-pills">
+                <span>Buttery</span>
+                <span>Crisp</span>
+                <span>Classic</span>
+              </div>
+
+              <span class="product-link">Shop Original</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offer-strip">
+  <div class="offer-card">
+    <div class="offer-copy">
+      <p class="offer-badge">First Order Offer</p>
+      <h2>Get 20% off your first order.</h2>
+      <p>Fresh drops, seasonal flavors, bundles, and Chicago popcorn updates.</p>
+    </div>
+
+    <div class="offer-signup">
+      <form class="offer-form" action="#" method="post">
+        <input type="email" name="email" placeholder="Enter your email" aria-label="Email address">
+        <button type="submit">Get 20% Off</button>
+      </form>
+
+      <p class="offer-disclaimer">
+        Disclaimer: By subscribing, you agree to receive occasional marketing emails from ChaCha’s Popcorn regarding limited product releases and exclusive offers. Subscription does not guarantee availability or access to future product drops. ChaCha’s Popcorn reserves the right to modify or cancel product drops at any time. Your information will be handled in accordance with our Privacy Policy. You may unsubscribe at any time.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="all-flavors-section">
+  <div class="section-inner">
+    <div class="section-heading reveal-on-scroll">
+      <p class="eyebrow">All Flavors</p>
+      <h2>Pick your bag.</h2>
+      <p>Browse every ChaCha’s flavor. As the menu grows, this row is already built to slide through more flavors.</p>
+    </div>
+
+    <div class="flavor-carousel">
+      <button class="flavor-arrow flavor-arrow-prev" type="button" data-flavor-prev aria-label="Previous flavors">‹</button>
+
+      <div class="flavor-tile-grid" data-flavor-track>
+        <a class="flavor-tile reveal-on-scroll" href="/product/original/">
+          <img src="{% static 'images/original-popcorn.jpg' %}" alt="Original popcorn">
+          <div class="flavor-tile-content">
+            <span>Original</span>
+            <p>Classic butter popcorn</p>
+            <strong>$14.99 / 12 oz bag</strong>
+          </div>
+        </a>
+
+        <a class="flavor-tile reveal-on-scroll" href="/product/cheddar/">
+          <img src="{% static 'images/cheddar-popcorn.jpg' %}" alt="Cheddar popcorn">
+          <div class="flavor-tile-content">
+            <span>Cheddar</span>
+            <p>Bold savory cheddar</p>
+            <strong>$15.99 / 12 oz bag</strong>
+          </div>
+        </a>
+
+        <a class="flavor-tile reveal-on-scroll" href="/product/caramel/">
+          <img src="{% static 'images/caramel-popcorn.jpg' %}" alt="Caramel popcorn">
+          <div class="flavor-tile-content">
+            <span>Caramel</span>
+            <p>Sweet golden crunch</p>
+            <strong>$16.99 / 12 oz bag</strong>
+          </div>
+        </a>
+
+        <a class="flavor-tile reveal-on-scroll flavor-tile-placeholder" href="/shop/">
+          <img src="{% static 'images/original-popcorn.jpg' %}" alt="More ChaCha's popcorn flavors">
+          <div class="flavor-tile-content">
+            <span>More Soon</span>
+            <p>Seasonal drops and limited flavors</p>
+            <strong>Coming soon</strong>
+          </div>
+        </a>
+      </div>
+
+      <button class="flavor-arrow flavor-arrow-next" type="button" data-flavor-next aria-label="Next flavors">›</button>
+    </div>
+  </div>
+</section>
+
+<section class="bundle-section" id="bundle">
+  <div class="bundle-card reveal-on-scroll">
+    <div>
+      <p class="eyebrow">Best First Order</p>
+      <h2>Try all three flavors in one box.</h2>
+      <p>Make checkout easy and get the full ChaCha's experience with Original, Cheddar, and Caramel together.</p>
+    </div>
+
+    <a class="button light" href="/shop/">Build Your Box</a>
+  </div>
+</section>
+
+<section class="occasion-section">
+  <div class="section-inner">
+    <div class="section-heading reveal-on-scroll">
+      <p class="eyebrow">Shop by Occasion</p>
+      <h2>Popcorn for every kind of craving.</h2>
+      <p>Make the choice easier with quick paths for gifting, sharing, snacking, and movie nights.</p>
+    </div>
+
+    <div class="occasion-grid">
+      <a class="occasion-card reveal-on-scroll" href="/shop/">
+        <span class="occasion-icon">🎬</span>
+        <h3>Movie Night</h3>
+        <p>Buttery, crunchy, couch-ready popcorn for the perfect night in.</p>
+        <strong>Shop movie snacks</strong>
+      </a>
+
+      <a class="occasion-card reveal-on-scroll" href="/shop/">
+        <span class="occasion-icon">🍿</span>
+        <h3>Family Sharing</h3>
+        <p>Easy crowd-pleasers made for bowls, parties, and second handfuls.</p>
+        <strong>Build a family box</strong>
+      </a>
+
+      <a class="occasion-card reveal-on-scroll" href="/shop/">
+        <span class="occasion-icon">🏢</span>
+        <h3>Office Snacks</h3>
+        <p>A simple way to upgrade the break room, client gifts, or team treats.</p>
+        <strong>Shop office favorites</strong>
+      </a>
+
+      <a class="occasion-card reveal-on-scroll" href="/shop/">
+        <span class="occasion-icon">🎁</span>
+        <h3>Chicago Gift Box</h3>
+        <p>Send a hometown classic with flavor, nostalgia, and serious crunch.</p>
+        <strong>Send a gift</strong>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="promise-section">
+  <div class="section-inner">
+    <div class="promise-card reveal-on-scroll">
+      <div>
+        <p class="eyebrow">The ChaCha’s Freshness Promise</p>
+        <h2>Freshly packed. Carefully shipped. Made to arrive ready to share.</h2>
+      </div>
+
+      <div class="promise-points">
+        <span>Fresh flavor</span>
+        <span>Crisp texture</span>
+        <span>Chicago care</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="section-inner story-grid">
+    <div class="story-copy reveal-on-scroll">
+      <p class="eyebrow">Our Story</p>
+      <h2>A commitment to excellence.</h2>
+      <p>
+        ChaCha's Popcorn carries on a hometown tradition rooted in freshness, flavor, and craft.
+        Every batch is made with care, bringing a true taste of Chicago popcorn legacy to your home.
+      </p>
+
+      <div class="pill-row">
+        <span>Locally Inspired</span>
+        <span>Freshly Popped</span>
+        <span>Family Owned</span>
+      </div>
+    </div>
+
+    <div class="story-image reveal-on-scroll">
+      <img src="{% static 'images/chachas-store.jpg' %}" alt="ChaCha's Popcorn storefront">
+    </div>
+  </div>
+</section>
+
+<section class="trust-section">
+  <div class="section-inner trust-grid">
+    <div class="trust-card reveal-on-scroll">
+      <h3>Fresh flavor</h3>
+      <p>Made to taste crisp, rich, and satisfying from the first handful to the last.</p>
+    </div>
+
+    <div class="trust-card reveal-on-scroll">
+      <h3>Easy ordering</h3>
+      <p>A simple store flow designed to get customers from flavor discovery to checkout fast.</p>
+    </div>
+
+    <div class="trust-card reveal-on-scroll">
+      <h3>Chicago roots</h3>
+      <p>A nostalgic popcorn brand with a hometown feel and a premium modern shopping experience.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

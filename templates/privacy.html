@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Privacy Policy | ChaCha's Popcorn{% endblock %}
+{% block description %}Privacy policy for ChaCha's Popcorn, including how customer information may be collected and used.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/support.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/popcorn-bg.html" %}
+
+
+<section class="support-hero">
+  <div class="section-inner support-hero-copy reveal-on-scroll">
+    <p class="eyebrow">Privacy Policy</p>
+    <h1>Your privacy matters.</h1>
+    <p>How ChaCha’s Popcorn may collect, use, and protect customer information.</p>
+  </div>
+</section>
+
+<section class="policy-grid-section">
+  <div class="section-inner">
+    <div class="policy-grid">
+      <article class="policy-card reveal-on-scroll">
+        <h2>Information we collect</h2>
+        <p>
+          ChaCha’s Popcorn may collect information customers provide when placing an order, creating an account,
+          joining the email list, or contacting support. This may include name, email address, phone number,
+          shipping address, order details, and customer support messages.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>How information is used</h2>
+        <p>
+          Customer information may be used to process orders, provide shipping updates, respond to support requests,
+          improve the shopping experience, and send marketing emails when customers choose to subscribe.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Payments</h2>
+        <p>
+          Payment details should be processed securely through Stripe or another approved payment provider.
+          ChaCha’s Popcorn should not directly store full credit card numbers on this website.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Email marketing</h2>
+        <p>
+          Customers who subscribe may receive occasional emails about product drops, limited releases, exclusive offers,
+          and ChaCha’s Popcorn updates. Customers may unsubscribe at any time using the unsubscribe link in marketing emails.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Cookies and analytics</h2>
+        <p>
+          The website may use cookies, analytics tools, or similar technologies to understand site performance,
+          improve customer experience, and support marketing efforts. A cookie banner may be added before launch if needed.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Information sharing</h2>
+        <p>
+          ChaCha’s Popcorn may share limited information with trusted service providers needed to operate the store,
+          such as payment processors, shipping providers, email platforms, analytics tools, and website hosting services.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Data security</h2>
+        <p>
+          ChaCha’s Popcorn should use reasonable safeguards to protect customer information. No online system is perfect,
+          but the site should be built with secure payment processing and responsible data handling in mind.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Customer choices</h2>
+        <p>
+          Customers may contact ChaCha’s Popcorn to ask questions about their information, update account details,
+          or request support related to their order or communication preferences.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

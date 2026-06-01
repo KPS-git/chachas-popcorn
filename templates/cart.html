@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Your Cart | ChaCha's Popcorn{% endblock %}
+{% block description %}Review your ChaCha's Popcorn cart before checkout.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/popcorn-bg.html" %}
+
+<section class="cart-hero">
+  <div class="section-inner">
+    <div class="cart-hero-copy reveal-on-scroll">
+      <p class="eyebrow">Your Cart</p>
+      <h1>Review your popcorn box.</h1>
+      <p>Confirm your flavors, add another bag, adjust quantities, and continue to secure checkout when you’re ready.</p>
+    </div>
+
+            <div class="cart-flavor-builder reveal-on-scroll" aria-label="Add flavors to cart">
+      <div class="cart-builder-head">
+        <div>
+          <p class="eyebrow">Build Your Box</p>
+          <h2>Add another flavor.</h2>
+        </div>
+
+        <div class="cart-builder-controls" aria-label="Flavor carousel controls">
+          <button class="cart-builder-arrow" type="button" data-cart-builder-prev aria-label="Previous flavor">
+            ‹
+          </button>
+
+          <button class="cart-builder-arrow" type="button" data-cart-builder-next aria-label="Next flavor">
+            ›
+          </button>
+        </div>
+      </div>
+
+      <div class="cart-builder-mobile-hint">
+        Swipe to browse flavors
+      </div>
+
+      <div class="cart-builder-scroll" data-cart-builder-track>
+        <article class="cart-builder-flavor">
+          <div class="cart-builder-image">
+            <img src="{% static 'images/original-popcorn.jpg' %}" alt="Original popcorn">
+          </div>
+
+          <div class="cart-builder-copy">
+            <span>Classic</span>
+            <h3>Original</h3>
+            <p>$14.99 / 12 oz</p>
+          </div>
+
+          <button class="cart-builder-add" type="button" aria-label="Add Original popcorn to cart">Add</button>
+        </article>
+
+        <article class="cart-builder-flavor">
+          <div class="cart-builder-image">
+            <img src="{% static 'images/cheddar-popcorn.jpg' %}" alt="Cheddar popcorn">
+          </div>
+
+          <div class="cart-builder-copy">
+            <span>Savory</span>
+            <h3>Cheddar</h3>
+            <p>$15.99 / 12 oz</p>
+          </div>
+
+          <button class="cart-builder-add" type="button" aria-label="Add Cheddar popcorn to cart">Add</button>
+        </article>
+
+        <article class="cart-builder-flavor">
+          <div class="cart-builder-image">
+            <img src="{% static 'images/caramel-popcorn.jpg' %}" alt="Caramel popcorn">
+          </div>
+
+          <div class="cart-builder-copy">
+            <span>Sweet</span>
+            <h3>Caramel</h3>
+            <p>$16.99 / 12 oz</p>
+          </div>
+
+          <button class="cart-builder-add" type="button" aria-label="Add Caramel popcorn to cart">Add</button>
+        </article>
+
+        <article class="cart-builder-flavor">
+          <div class="cart-builder-image">
+            <img src="{% static 'images/original-popcorn.jpg' %}" alt="Kettle popcorn">
+          </div>
+
+          <div class="cart-builder-copy">
+            <span>Sweet Salt</span>
+            <h3>Kettle</h3>
+            <p>$15.99 / 12 oz</p>
+          </div>
+
+          <button class="cart-builder-add" type="button" aria-label="Add Kettle popcorn to cart">Add</button>
+        </article>
+
+        <article class="cart-builder-flavor">
+          <div class="cart-builder-image">
+            <img src="{% static 'images/caramel-popcorn.jpg' %}" alt="Chicago Mix popcorn">
+          </div>
+
+          <div class="cart-builder-copy">
+            <span>Best Mix</span>
+            <h3>Chicago Mix</h3>
+            <p>$17.99 / 12 oz</p>
+          </div>
+
+          <button class="cart-builder-add" type="button" aria-label="Add Chicago Mix popcorn to cart">Add</button>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cart-section">
+  <div class="section-inner cart-layout">
+    <div class="cart-items reveal-on-scroll">
+      <div class="cart-items-header">
+        <h2>Cart Items</h2>
+        <a href="/shop/">Continue Shopping</a>
+      </div>
+
+      <article class="cart-item">
+        <a class="cart-item-image-link" href="/product/caramel/" aria-label="View Caramel popcorn">
+          <img src="{% static 'images/caramel-popcorn.jpg' %}" alt="Caramel popcorn">
+        </a>
+
+        <div class="cart-item-main">
+          <div>
+            <div class="cart-title-line">
+              <a class="cart-item-title-link" href="/product/caramel/">
+                <h3>Caramel</h3>
+              </a>
+              <p class="cart-tag">Sweet</p>
+            </div>
+            <p>12 oz bag</p>
+          </div>
+
+          <div class="cart-item-controls">
+            <div class="quantity-control" aria-label="Quantity selector">
+              <button type="button">−</button>
+              <span>1</span>
+              <button type="button">+</button>
+            </div>
+
+            <button class="remove-button" type="button">Remove</button>
+          </div>
+        </div>
+
+        <strong>$16.99</strong>
+      </article>
+
+      <article class="cart-item">
+        <a class="cart-item-image-link" href="/product/cheddar/" aria-label="View Cheddar popcorn">
+          <img src="{% static 'images/cheddar-popcorn.jpg' %}" alt="Cheddar popcorn">
+        </a>
+
+        <div class="cart-item-main">
+          <div>
+            <div class="cart-title-line">
+              <a class="cart-item-title-link" href="/product/cheddar/">
+                <h3>Cheddar</h3>
+              </a>
+              <p class="cart-tag">Savory</p>
+            </div>
+            <p>12 oz bag</p>
+          </div>
+
+          <div class="cart-item-controls">
+            <div class="quantity-control" aria-label="Quantity selector">
+              <button type="button">−</button>
+              <span>1</span>
+              <button type="button">+</button>
+            </div>
+
+            <button class="remove-button" type="button">Remove</button>
+          </div>
+        </div>
+
+        <strong>$15.99</strong>
+      </article>
+
+      <div class="cart-note">
+        <h3>Freshness note</h3>
+        <p>For best crunch, keep bags sealed until ready to enjoy. Store in a cool, dry place after opening.</p>
+      </div>
+    </div>
+
+    <aside class="cart-summary reveal-on-scroll">
+      <p class="eyebrow">Order Summary</p>
+      <h2>Almost snack time.</h2>
+
+      <div class="discount-box">
+        <label for="discount-code">Discount code</label>
+        <div>
+          <input id="discount-code" type="text" placeholder="Enter code">
+          <button type="button">Apply</button>
+        </div>
+      </div>
+
+      <div class="summary-lines">
+        <div>
+          <span>Subtotal</span>
+          <strong>$32.98</strong>
+        </div>
+
+        <div>
+          <span>Shipping</span>
+          <strong>Calculated next</strong>
+        </div>
+
+        <div>
+          <span>Estimated tax</span>
+          <strong>Calculated next</strong>
+        </div>
+      </div>
+
+      <div class="summary-total">
+        <span>Estimated total</span>
+        <strong>$32.98</strong>
+      </div>
+
+      <a class="button primary checkout-button" href="/checkout/">Continue to Checkout</a>
+
+      <div class="summary-trust">
+        <span>Secure checkout</span>
+        <span>Fresh packed</span>
+        <span>Ships from Chicago</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="cart-upsell-section">
+  <div class="section-inner">
+    <div class="cart-upsell-card reveal-on-scroll">
+      <div>
+        <p class="eyebrow">Complete the Box</p>
+        <h2>Add Original for the full ChaCha’s trio.</h2>
+        <p>Original, Cheddar, and Caramel together make the easiest first order.</p>
+      </div>
+
+      <div class="upsell-product">
+        <a href="/product/original/" aria-label="View Original popcorn">
+          <img src="{% static 'images/original-popcorn.jpg' %}" alt="Original popcorn">
+        </a>
+
+        <div>
+          <a href="/product/original/">
+            <h3>Original</h3>
+          </a>
+          <p>$14.99 / 12 oz bag</p>
+          <a class="button light" href="/product/original/">View Flavor</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

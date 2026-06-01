@@ -1,0 +1,162 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{% block title %}ChaCha's Popcorn{% endblock %}</title>
+  <meta name="description" content="{% block description %}Small-batch Chicago popcorn made with care, flavor, and tradition.{% endblock %}" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="{% static 'images/favicon.png' %}">
+
+  <link rel="stylesheet" href="{% static 'css/global.css' %}">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+  <div class="site-shell">
+    <header class="site-header" data-site-header>
+  <a class="site-logo" href="/" aria-label="ChaCha's Popcorn home">
+    <img src="{% static 'images/chachas-logo.png' %}" alt="ChaCha's Popcorn">
+  </a>
+
+  <button class="mobile-menu-button" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="site-nav" data-site-nav aria-label="Main navigation">
+    <div class="nav-item has-dropdown">
+      <a href="/shop/">Shop</a>
+
+      <div class="nav-dropdown">
+        <a href="/shop/">All Popcorn</a>
+        <a href="/product/original/">Original</a>
+        <a href="/product/cheddar/">Cheddar</a>
+        <a href="/product/caramel/">Caramel</a>
+        <a href="/shop/#bundle">Build a Box</a>
+      </div>
+    </div>
+
+    <div class="nav-item has-dropdown">
+      <a href="/shop/">Occasions</a>
+
+      <div class="nav-dropdown">
+        <a href="/shop/">Movie Night</a>
+        <a href="/shop/">Family Sharing</a>
+        <a href="/shop/">Office Snacks</a>
+        <a href="/shop/">Chicago Gift Box</a>
+      </div>
+    </div>
+
+    <a href="/faq/">FAQ</a>
+    <a href="/contact/">Contact</a>
+    <a href="/account/">Account</a>
+    <a class="build-box-link" href="/shop/#bundle">Build a Box</a>
+    <a class="cart-link" href="/cart/">Cart</a>
+  </nav>
+</header>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <a class="footer-logo" href="/" aria-label="ChaCha's Popcorn home">
+          <img src="{% static 'images/chachas-logo.png' %}" alt="ChaCha's Popcorn">
+        </a>
+        <p>Chicago-born popcorn made with big flavor, small-batch care, and hometown pride.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h3>Shop</h3>
+          <a href="/shop/">All Flavors</a>
+          <a href="/product/original/">Original</a>
+          <a href="/product/cheddar/">Cheddar</a>
+          <a href="/product/caramel/">Caramel</a>
+        </div>
+
+        <div>
+          <h3>Customer Care</h3>
+          <a href="/contact/">Contact</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/shipping/">Shipping</a>
+          <a href="/returns/">Returns</a>
+        </div>
+
+        <div>
+          <h3>Legal</h3>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- Email signup modal + cookie banner -->
+  <div class="promo-modal" data-promo-modal hidden>
+    <div class="promo-backdrop" data-promo-close></div>
+
+    <section class="promo-dialog" role="dialog" aria-modal="true" aria-labelledby="promo-title">
+      <button class="promo-close" type="button" data-promo-close aria-label="Close offer">×</button>
+
+      <div class="promo-image">
+        <img src="{% static 'images/caramel-popcorn.jpg' %}" alt="ChaCha's caramel popcorn">
+      </div>
+
+      <div class="promo-copy">
+        <p class="eyebrow">First Order Offer</p>
+        <h2 id="promo-title">Get 20% off your first order.</h2>
+        <p>
+          Join the ChaCha’s list for fresh drops, seasonal flavors, and exclusive popcorn offers.
+        </p>
+
+        <form class="promo-form" data-promo-form>
+          <label for="promo-email">Email address</label>
+          <div>
+            <input id="promo-email" type="email" name="email" placeholder="you@example.com" required>
+            <button class="button primary" type="submit">Get 20% Off</button>
+          </div>
+        </form>
+
+        <p class="promo-success" data-promo-success hidden>
+          You’re in. Use code <strong>CHACHA20</strong> at checkout.
+        </p>
+
+        <p class="promo-disclaimer">
+          Disclaimer: By subscribing, you agree to receive occasional marketing emails from ChaCha’s Popcorn regarding limited product releases and exclusive offers. Subscription does not guarantee availability or access to future product drops. ChaCha’s Popcorn reserves the right to modify or cancel product drops at any time. Your information will be handled in accordance with our Privacy Policy. You may unsubscribe at any time.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <div class="cookie-banner" data-cookie-banner hidden>
+    <div>
+      <strong>We use cookies.</strong>
+      <p>
+        ChaCha’s Popcorn may use cookies and analytics to improve the shopping experience and understand site performance.
+      </p>
+    </div>
+
+    <div class="cookie-actions">
+      <button class="button secondary" type="button" data-cookie-decline>Decline</button>
+      <button class="button primary" type="button" data-cookie-accept>Accept</button>
+    </div>
+  </div>
+
+
+  <script src="{% static 'js/main.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

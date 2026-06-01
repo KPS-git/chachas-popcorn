@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Terms of Service | ChaCha's Popcorn{% endblock %}
+{% block description %}Terms of service for using the ChaCha's Popcorn website and purchasing products online.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/support.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/popcorn-bg.html" %}
+
+
+<section class="support-hero">
+  <div class="section-inner support-hero-copy reveal-on-scroll">
+    <p class="eyebrow">Terms of Service</p>
+    <h1>Simple terms for shopping ChaCha’s.</h1>
+    <p>Guidelines for using the website, placing orders, and purchasing ChaCha’s Popcorn online.</p>
+  </div>
+</section>
+
+<section class="policy-grid-section">
+  <div class="section-inner">
+    <div class="policy-grid">
+      <article class="policy-card reveal-on-scroll">
+        <h2>Use of the website</h2>
+        <p>
+          By using the ChaCha’s Popcorn website, customers agree to use the site for lawful purposes and not misuse,
+          interfere with, or attempt to disrupt the website, checkout process, or account systems.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Product information</h2>
+        <p>
+          ChaCha’s Popcorn aims to present product information, pricing, images, and descriptions accurately.
+          Product availability, packaging, pricing, and details may change over time.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Orders</h2>
+        <p>
+          Orders are subject to acceptance, availability, payment authorization, and fulfillment capacity.
+          ChaCha’s Popcorn may cancel or refund an order if there is an issue with inventory, payment, pricing, or shipping.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Payments</h2>
+        <p>
+          Online payments should be processed through Stripe or another approved payment processor.
+          Customers are responsible for providing accurate payment and billing information.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Shipping</h2>
+        <p>
+          Shipping timelines and rates may vary based on location, order size, carrier availability, and store operations.
+          Shipping costs may be calculated during checkout.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Returns and refunds</h2>
+        <p>
+          Because popcorn is a food product, returns may be limited. Damaged, incorrect, or missing orders should be
+          reported through the contact page so ChaCha’s Popcorn can review the issue.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Accounts</h2>
+        <p>
+          Customers may be able to create an account to view orders, manage saved details, and speed up future checkout.
+          Customers are responsible for keeping login information secure.
+        </p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Marketing offers</h2>
+        <p>
+          Discounts, product drops, and promotional offers may be limited, modified, or discontinued at any time.
+          Email subscription does not guarantee availability or access to future product drops.
+        </p>
+      </article>
+    </div>
+
+{% endblock %}

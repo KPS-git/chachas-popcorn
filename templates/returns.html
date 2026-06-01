@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Returns | ChaCha's Popcorn{% endblock %}
+{% block description %}Return and support information for ChaCha's Popcorn orders.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/support.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/popcorn-bg.html" %}
+
+
+<section class="support-hero">
+  <div class="section-inner support-hero-copy reveal-on-scroll">
+    <p class="eyebrow">Returns</p>
+    <h1>Order support with care.</h1>
+    <p>Because popcorn is a food product, return handling should be clear, careful, and customer-friendly.</p>
+  </div>
+</section>
+
+<section class="policy-grid-section">
+  <div class="section-inner">
+    <div class="policy-grid">
+      <article class="policy-card reveal-on-scroll">
+        <h2>Food product policy</h2>
+        <p>Because ChaCha’s Popcorn is a consumable food product, returns may be limited once an item has shipped or been opened. Final policy language should be confirmed by ChaCha’s before launch.</p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Damaged or incorrect orders</h2>
+        <p>If an order arrives damaged or incorrect, customers should contact ChaCha’s with their order number and photos so the team can review the issue.</p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Refund review</h2>
+        <p>Refunds, replacements, or credits can be reviewed case by case based on the order issue and final store policy.</p>
+      </article>
+    </div>
+
+    <div class="policy-note-card reveal-on-scroll">
+      <h2>Need help?</h2>
+      <p>Use the contact page for order support, damaged shipments, missing items, or questions about a recent purchase.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Shop ChaCha's Popcorn | Original, Cheddar, Caramel & Bundles{% endblock %}
+{% block description %}Shop ChaCha's Popcorn flavors including Original, Cheddar, Caramel, and build-your-own popcorn bundles.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/shop.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include "partials/popcorn-bg.html" %}
+
+
+<section class="shop-hero">
+  <div class="shop-hero-bg" aria-hidden="true"></div>
+
+  <div class="shop-hero-inner">
+    <div class="shop-hero-copy reveal-on-scroll">
+      <p class="eyebrow">Shop ChaCha’s</p>
+      <h1>Fresh popcorn, big Chicago flavor.</h1>
+      <p>
+        Choose your favorite bag, build a box, or start with the classics.
+        Simple checkout, fresh flavor, and popcorn made for sharing.
+      </p>
+
+      <div class="shop-hero-actions">
+        <a class="button primary" href="#all-popcorn">Shop Flavors</a>
+        <a class="button secondary" href="#bundle">Build a Box</a>
+      </div>
+    </div>
+
+    <div class="shop-hero-card reveal-on-scroll">
+      <img src="{% static 'images/chachas-hero-logo.png' %}" alt="ChaCha's Popcorn">
+      <p>Original, Cheddar, and Caramel are ready for your first box.</p>
+    </div>
+  </div>
+</section>
+
+<section class="shop-filter-section" id="all-popcorn">
+  <div class="section-inner">
+    <div class="shop-heading reveal-on-scroll">
+      <p class="eyebrow">All Popcorn</p>
+      <h2>Pick your flavor.</h2>
+      <p>Browse the current ChaCha’s lineup. More seasonal flavors and limited drops can plug into this same grid later.</p>
+    </div>
+
+    <div class="filter-pills reveal-on-scroll" aria-label="Shop filters">
+      <a class="filter-pill active" href="#all-popcorn">All</a>
+      <a class="filter-pill" href="#classic">Classic</a>
+      <a class="filter-pill" href="#savory">Savory</a>
+      <a class="filter-pill" href="#sweet">Sweet</a>
+      <a class="filter-pill" href="#bundle">Bundles</a>
+    </div>
+
+    <div class="shop-grid">
+      <article class="shop-product-card reveal-on-scroll" id="classic">
+        <a class="product-image-link" href="/product/original/" aria-label="View Original popcorn">
+          <img src="{% static 'images/original-popcorn.jpg' %}" alt="Original popcorn">
+          <span class="product-badge">Classic</span>
+        </a>
+
+        <div class="shop-product-content">
+          <div class="product-title-row">
+            <div>
+              <h3>Original</h3>
+              <p>Classic butter popcorn</p>
+            </div>
+            <strong>$14.99</strong>
+          </div>
+
+          <p class="product-description">
+            Light, crisp, buttery, and built for the person who wants popcorn done right without overthinking it.
+          </p>
+
+          <div class="product-meta">
+            <span>12 oz bag</span>
+            <span>Fresh packed</span>
+            <span>Chicago favorite</span>
+          </div>
+
+          <div class="product-actions">
+            <a class="button primary small" href="/cart/">Add to Cart</a>
+            <a class="details-link" href="/product/original/">View Details</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="shop-product-card reveal-on-scroll" id="savory">
+        <a class="product-image-link" href="/product/cheddar/" aria-label="View Cheddar popcorn">
+          <img src="{% static 'images/cheddar-popcorn.jpg' %}" alt="Cheddar popcorn">
+          <span class="product-badge">Savory</span>
+        </a>
+
+        <div class="shop-product-content">
+          <div class="product-title-row">
+            <div>
+              <h3>Cheddar</h3>
+              <p>Bold savory cheddar</p>
+            </div>
+            <strong>$15.99</strong>
+          </div>
+
+          <p class="product-description">
+            Rich cheddar flavor over crisp popcorn for a snack that tastes louder, cheesier, and more addictive.
+          </p>
+
+          <div class="product-meta">
+            <span>12 oz bag</span>
+            <span>Big flavor</span>
+            <span>Savory crunch</span>
+          </div>
+
+          <div class="product-actions">
+            <a class="button primary small" href="/cart/">Add to Cart</a>
+            <a class="details-link" href="/product/cheddar/">View Details</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="shop-product-card reveal-on-scroll" id="sweet">
+        <a class="product-image-link" href="/product/caramel/" aria-label="View Caramel popcorn">
+          <img src="{% static 'images/caramel-popcorn.jpg' %}" alt="Caramel popcorn">
+          <span class="product-badge">Sweet</span>
+        </a>
+
+        <div class="shop-product-content">
+          <div class="product-title-row">
+            <div>
+              <h3>Caramel</h3>
+              <p>Sweet golden crunch</p>
+            </div>
+            <strong>$16.99</strong>
+          </div>
+
+          <p class="product-description">
+            Golden caramel, serious crunch, and a sweet toasted finish that makes it hard to stop reaching back in.
+          </p>
+
+          <div class="product-meta">
+            <span>12 oz bag</span>
+            <span>Golden glaze</span>
+            <span>Fan favorite</span>
+          </div>
+
+          <div class="product-actions">
+            <a class="button primary small" href="/cart/">Add to Cart</a>
+            <a class="details-link" href="/product/caramel/">View Details</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bundle-builder-section" id="bundle">
+  <div class="section-inner">
+    <div class="bundle-builder-card reveal-on-scroll">
+      <div class="bundle-copy">
+        <p class="eyebrow">Best First Order</p>
+        <h2>Try all three flavors in one box.</h2>
+        <p>
+          The easiest way to taste ChaCha’s. Build a starter box with Original, Cheddar, and Caramel,
+          then come back for your favorite.
+        </p>
+
+        <div class="bundle-points">
+          <span>Original</span>
+          <span>Cheddar</span>
+          <span>Caramel</span>
+        </div>
+      </div>
+
+      <div class="bundle-panel">
+        <div class="bundle-mini-products">
+          <img src="{% static 'images/original-popcorn.jpg' %}" alt="Original popcorn">
+          <img src="{% static 'images/cheddar-popcorn.jpg' %}" alt="Cheddar popcorn">
+          <img src="{% static 'images/caramel-popcorn.jpg' %}" alt="Caramel popcorn">
+        </div>
+
+        <div class="bundle-price-box">
+          <span>Starter Box</span>
+          <strong>$42.99</strong>
+          <p>Three 12 oz bags</p>
+          <a class="button light" href="/cart/">Build Your Box</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-support-section">
+  <div class="section-inner support-grid">
+    <div class="support-card reveal-on-scroll">
+      <span>01</span>
+      <h3>Fresh packed</h3>
+      <p>Popcorn that feels fresh, crisp, and ready to serve when it arrives.</p>
+    </div>
+
+    <div class="support-card reveal-on-scroll">
+      <span>02</span>
+      <h3>Simple checkout</h3>
+      <p>Designed for a fast path from flavor discovery to secure payment.</p>
+    </div>
+
+    <div class="support-card reveal-on-scroll">
+      <span>03</span>
+      <h3>Easy gifting</h3>
+      <p>Great for movie nights, family sharing, office snacks, and Chicago-inspired gifts.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

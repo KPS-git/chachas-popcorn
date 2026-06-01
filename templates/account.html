@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}My Account | ChaCha's Popcorn{% endblock %}
+{% block description %}View your ChaCha's Popcorn account, recent orders, saved addresses, and account details.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/popcorn-bg.html" %}
+
+
+<section class="account-hero">
+  <div class="section-inner account-hero-layout">
+    <div class="account-hero-copy reveal-on-scroll">
+      <p class="eyebrow">My Account</p>
+      <h1>Welcome back.</h1>
+      <p>Review recent orders, manage saved details, and get back to your favorite flavors faster.</p>
+    </div>
+
+    <div class="account-status-card reveal-on-scroll">
+      <span>Signed in as</span>
+      <strong>customer@example.com</strong>
+      <a href="/shop/">Shop More Popcorn</a>
+    </div>
+  </div>
+</section>
+
+<section class="account-dashboard-section">
+  <div class="section-inner account-dashboard">
+    <aside class="account-sidebar reveal-on-scroll">
+      <a class="is-active" href="#orders">Orders</a>
+      <a href="#addresses">Addresses</a>
+      <a href="#details">Account Details</a>
+      <a href="/shop/">Shop</a>
+      <a href="/login/">Sign Out</a>
+    </aside>
+
+    <div class="account-panels">
+      <section class="account-panel reveal-on-scroll" id="orders">
+        <div class="panel-heading-row">
+          <div>
+            <p class="eyebrow">Recent Orders</p>
+            <h2>Your popcorn history.</h2>
+          </div>
+
+          <a href="/shop/">Place New Order</a>
+        </div>
+
+        <div class="order-list">
+          <article class="order-card">
+            <div>
+              <span>Order #1042</span>
+              <h3>Caramel + Cheddar</h3>
+              <p>Placed today · Status: Confirmed</p>
+            </div>
+
+            <strong>$32.98</strong>
+          </article>
+
+          <article class="order-card">
+            <div>
+              <span>Order #1038</span>
+              <h3>Starter Box</h3>
+              <p>Previous order · Status: Delivered</p>
+            </div>
+
+            <strong>$42.99</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="account-panel reveal-on-scroll" id="addresses">
+        <div class="panel-heading-row">
+          <div>
+            <p class="eyebrow">Saved Address</p>
+            <h2>Shipping details.</h2>
+          </div>
+
+          <button type="button">Edit</button>
+        </div>
+
+        <div class="address-card">
+          <h3>Default Shipping Address</h3>
+          <p>
+            123 Popcorn Avenue<br>
+            Chicago, IL 60601<br>
+            United States
+          </p>
+        </div>
+      </section>
+
+      <section class="account-panel reveal-on-scroll" id="details">
+        <div class="panel-heading-row">
+          <div>
+            <p class="eyebrow">Account Details</p>
+            <h2>Your information.</h2>
+          </div>
+
+          <button type="button">Update</button>
+        </div>
+
+        <div class="details-grid">
+          <div>
+            <span>Name</span>
+            <strong>ChaCha’s Customer</strong>
+          </div>
+
+          <div>
+            <span>Email</span>
+            <strong>customer@example.com</strong>
+          </div>
+
+          <div>
+            <span>Marketing</span>
+            <strong>Subscribed</strong>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

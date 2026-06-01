@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Order Confirmed | ChaCha's Popcorn{% endblock %}
+{% block description %}Your ChaCha's Popcorn order has been confirmed.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/success.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/popcorn-bg.html" %}
+
+
+<section class="success-hero">
+  <div class="section-inner success-layout">
+    <div class="success-card reveal-on-scroll">
+      <div class="success-icon">✓</div>
+
+      <p class="eyebrow">Order Confirmed</p>
+      <h1>Popcorn is on the way.</h1>
+      <p>
+        Thank you for ordering ChaCha’s Popcorn. A confirmation email will be sent shortly with your order details.
+      </p>
+
+      <div class="success-actions">
+        <a class="button primary" href="/shop/">Keep Shopping</a>
+        <a class="button secondary" href="/account/">View Account</a>
+      </div>
+    </div>
+
+    <aside class="order-summary-card reveal-on-scroll">
+      <p class="eyebrow">Order Summary</p>
+      <h2>Your box</h2>
+
+      <div class="summary-items">
+        <div class="summary-item">
+          <img src="{% static 'images/caramel-popcorn.jpg' %}" alt="Caramel popcorn">
+          <div>
+            <h3>Caramel</h3>
+            <p>12 oz bag × 1</p>
+          </div>
+        </div>
+
+        <div class="summary-item">
+          <img src="{% static 'images/cheddar-popcorn.jpg' %}" alt="Cheddar popcorn">
+          <div>
+            <h3>Cheddar</h3>
+            <p>12 oz bag × 1</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-detail-list">
+        <div>
+          <span>Order status</span>
+          <strong>Confirmed</strong>
+        </div>
+
+        <div>
+          <span>Payment</span>
+          <strong>Processed securely</strong>
+        </div>
+
+        <div>
+          <span>Shipping</span>
+          <strong>Updates by email</strong>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="next-steps-section">
+  <div class="section-inner next-steps-grid">
+    <div class="next-step-card reveal-on-scroll">
+      <span>01</span>
+      <h3>Watch your inbox</h3>
+      <p>Your order confirmation and shipping updates should arrive by email.</p>
+    </div>
+
+    <div class="next-step-card reveal-on-scroll">
+      <span>02</span>
+      <h3>Keep it fresh</h3>
+      <p>When your popcorn arrives, keep bags sealed until ready to enjoy.</p>
+    </div>
+
+    <div class="next-step-card reveal-on-scroll">
+      <span>03</span>
+      <h3>Come back hungry</h3>
+      <p>Check back for bundles, seasonal flavors, and future ChaCha’s drops.</p>
+    </div>
+  </div>
+</section>
+
+<section class="success-upsell-section">
+  <div class="section-inner">
+    <div class="success-upsell-card reveal-on-scroll">
+      <div>
+        <p class="eyebrow">Still Craving?</p>
+        <h2>Send a box to someone else.</h2>
+        <p>ChaCha’s makes an easy gift for family, friends, offices, movie nights, and Chicago popcorn fans.</p>
+      </div>
+
+      <a class="button light" href="/shop/">Shop More Popcorn</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

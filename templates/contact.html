@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact | ChaCha's Popcorn{% endblock %}
+{% block description %}Contact ChaCha's Popcorn for order questions, support, gifting, and wholesale inquiries.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/support.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/popcorn-bg.html" %}
+
+
+<section class="support-hero">
+  <div class="section-inner support-hero-copy reveal-on-scroll">
+    <p class="eyebrow">Contact</p>
+    <h1>Need help with your order?</h1>
+    <p>Send a message for order support, gifting questions, wholesale inquiries, or general ChaCha’s Popcorn help.</p>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="section-inner contact-layout">
+    <div class="contact-card reveal-on-scroll">
+      <h2>We’re here to help.</h2>
+      <p>Use the form and ChaCha’s can route the message to the right person. Birat can later connect this to email, Django admin, or a support inbox.</p>
+
+      <div class="contact-methods">
+        <div class="contact-method">
+          <span>Order Support</span>
+          <strong>Questions about a recent purchase</strong>
+        </div>
+
+        <div class="contact-method">
+          <span>Gifting</span>
+          <strong>Boxes for family, offices, or events</strong>
+        </div>
+
+        <div class="contact-method">
+          <span>Wholesale</span>
+          <strong>Retail, bulk, or partnership inquiries</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-card reveal-on-scroll">
+      <h2>Send a message.</h2>
+      <p>We’ll use this information to respond to your request.</p>
+
+      <form class="support-form" action="#" method="post">
+        {% csrf_token %}
+
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+
+        <label>
+          Topic
+          <select name="topic" required>
+            <option value="">Select a topic</option>
+            <option value="order">Order support</option>
+            <option value="shipping">Shipping question</option>
+            <option value="gift">Gifting</option>
+            <option value="wholesale">Wholesale</option>
+          </select>
+        </label>
+
+        <label>
+          Message
+          <textarea name="message" placeholder="How can we help?" required></textarea>
+        </label>
+
+        <button class="button primary support-submit" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

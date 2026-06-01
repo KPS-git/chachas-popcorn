@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}FAQ | ChaCha's Popcorn{% endblock %}
+{% block description %}Frequently asked questions about ChaCha's Popcorn orders, shipping, freshness, and flavors.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/support.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/popcorn-bg.html" %}
+
+
+<section class="support-hero">
+  <div class="section-inner support-hero-copy reveal-on-scroll">
+    <p class="eyebrow">FAQ</p>
+    <h1>Popcorn questions, answered.</h1>
+    <p>Quick answers about ordering, freshness, shipping, returns, and ChaCha’s flavors.</p>
+  </div>
+</section>
+
+<section class="support-content-section">
+  <div class="section-inner faq-layout">
+    <aside class="support-sidebar reveal-on-scroll">
+      <h2>Help Center</h2>
+      <a class="is-active" href="/faq/">FAQ</a>
+      <a href="/shipping/">Shipping</a>
+      <a href="/returns/">Returns</a>
+      <a href="/contact/">Contact</a>
+    </aside>
+
+    <div class="faq-list reveal-on-scroll">
+      <article class="faq-item">
+        <h2>How fresh is the popcorn?</h2>
+        <p>ChaCha’s popcorn should be packed with freshness in mind. For the best experience, customers should keep bags sealed until they are ready to enjoy them.</p>
+      </article>
+
+      <article class="faq-item">
+        <h2>What flavors are available?</h2>
+        <p>The initial lineup includes Original, Cheddar, and Caramel, with room for seasonal flavors and future limited drops.</p>
+      </article>
+
+      <article class="faq-item">
+        <h2>Can customers build a bundle?</h2>
+        <p>Yes. The site is designed around simple individual bag purchases and an easy starter box featuring all three core flavors.</p>
+      </article>
+
+      <article class="faq-item">
+        <h2>How does checkout work?</h2>
+        <p>The site is structured so Django can create a Stripe Checkout session. Stripe should handle payment securely, then return the customer to the confirmation page.</p>
+      </article>
+
+      <article class="faq-item">
+        <h2>Can customers create an account?</h2>
+        <p>Yes. The account pages are designed as a frontend shell so Django authentication can later manage login, saved addresses, and order history.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

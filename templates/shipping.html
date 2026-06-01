@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Shipping | ChaCha's Popcorn{% endblock %}
+{% block description %}Shipping information for ChaCha's Popcorn orders.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/support.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/popcorn-bg.html" %}
+
+
+<section class="support-hero">
+  <div class="section-inner support-hero-copy reveal-on-scroll">
+    <p class="eyebrow">Shipping</p>
+    <h1>Fresh popcorn, carefully shipped.</h1>
+    <p>Clear expectations for processing, delivery, and order updates.</p>
+  </div>
+</section>
+
+<section class="policy-grid-section">
+  <div class="section-inner">
+    <div class="policy-grid">
+      <article class="policy-card reveal-on-scroll">
+        <h2>Processing times</h2>
+        <p>Orders should be prepared and packed as quickly as possible. Final processing timelines should be confirmed by ChaCha’s before launch.</p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Shipping rates</h2>
+        <p>Shipping costs can be calculated during checkout through Stripe or the connected shipping workflow Birat implements.</p>
+      </article>
+
+      <article class="policy-card reveal-on-scroll">
+        <h2>Order updates</h2>
+        <p>Customers should receive email updates after purchase, including confirmation and shipping information when available.</p>
+      </article>
+    </div>
+
+    <div class="policy-note-card reveal-on-scroll">
+      <h2>Freshness matters.</h2>
+      <p>For the best experience, customers should keep popcorn sealed until ready to enjoy and store it in a cool, dry place.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
