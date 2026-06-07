@@ -24,7 +24,7 @@
   font-family: var(--font-display);
   font-size: clamp(3rem, 6.6vw, 6.6rem);
   line-height: 0.86;
-  letter-spacing: -0.085em;
+  letter-spacing: -0.052em;
 }
 
 .cart-hero-copy p:not(.eyebrow) {
@@ -65,7 +65,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.9rem, 3vw, 2.8rem);
   line-height: 0.9;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.048em;
 }
 
 .cart-builder-controls {
@@ -183,7 +183,7 @@
   font-family: var(--font-display);
   font-size: 1.75rem;
   line-height: 0.92;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.048em;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -264,7 +264,7 @@
   font-family: var(--font-display);
   font-size: 2.4rem;
   line-height: 0.9;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.048em;
 }
 
 .cart-items-header a {
@@ -342,7 +342,7 @@
   font-family: var(--font-display);
   font-size: 2.5rem;
   line-height: 0.88;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.048em;
   transition: color 180ms ease;
 }
 
@@ -422,7 +422,7 @@
   font-family: var(--font-display);
   font-size: 2rem;
   line-height: 0.9;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.045em;
 }
 
 .cart-note p {
@@ -445,7 +445,7 @@
   font-family: var(--font-display);
   font-size: 3.3rem;
   line-height: 0.86;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.052em;
 }
 
 .discount-box {
@@ -531,7 +531,7 @@
   font-family: var(--font-display);
   font-size: 2.6rem;
   line-height: 0.85;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.048em;
 }
 
 .checkout-button {
@@ -590,7 +590,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 4.8vw, 4.8rem);
   line-height: 0.88;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.052em;
 }
 
 .cart-upsell-card p:not(.eyebrow) {
@@ -630,7 +630,7 @@
   font-family: var(--font-display);
   font-size: 2.4rem;
   line-height: 0.9;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.048em;
 }
 
 .upsell-product p {

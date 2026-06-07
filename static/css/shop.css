@@ -51,7 +51,7 @@
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 7.2vw, 7.2rem);
   line-height: 0.88;
-  letter-spacing: -0.085em;
+  letter-spacing: -0.052em;
 }
 
 .shop-hero-copy p:not(.eyebrow) {
@@ -115,7 +115,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 5.5vw, 5.4rem);
   line-height: 0.88;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.052em;
 }
 
 .shop-heading p:not(.eyebrow) {
@@ -236,7 +236,7 @@
   font-family: var(--font-display);
   font-size: 2.6rem;
   line-height: 0.88;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.048em;
 }
 
 .product-title-row p {
@@ -329,7 +329,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.7rem, 5vw, 5.35rem);
   line-height: 0.88;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.052em;
 }
 
 .bundle-copy p:not(.eyebrow) {
@@ -407,7 +407,7 @@
   font-family: var(--font-display);
   font-size: 3.5rem;
   line-height: 0.9;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.048em;
 }
 
 .bundle-price-box p {
@@ -454,7 +454,7 @@
   font-family: var(--font-display);
   font-size: 2rem;
   line-height: 0.92;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.045em;
 }
 
 .support-card p {

@@ -25,7 +25,7 @@
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 7vw, 7rem);
   line-height: 0.84;
-  letter-spacing: -0.09em;
+  letter-spacing: -0.052em;
 }
 
 .support-hero-copy p:not(.eyebrow) {
@@ -79,7 +79,7 @@
   font-family: var(--font-display);
   font-size: 2.2rem;
   line-height: 0.9;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.048em;
 }
 
 .support-sidebar a {
@@ -114,7 +114,7 @@
   font-family: var(--font-display);
   font-size: 2.25rem;
   line-height: 0.92;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.048em;
 }
 
 .faq-item p {
@@ -146,7 +146,7 @@
   font-family: var(--font-display);
   font-size: 2.8rem;
   line-height: 0.88;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.052em;
 }
 
 .contact-card p,

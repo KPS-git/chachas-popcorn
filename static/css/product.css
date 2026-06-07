@@ -126,7 +126,7 @@
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 6.5vw, 6.4rem);
   line-height: 0.84;
-  letter-spacing: -0.085em;
+  letter-spacing: -0.052em;
 }
 
 .product-subtitle {
@@ -171,7 +171,7 @@
   font-family: var(--font-display);
   font-size: 3.1rem;
   line-height: 0.85;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.048em;
 }
 
 .product-price-row span {
@@ -320,7 +320,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 5.2vw, 5.1rem);
   line-height: 0.88;
-  letter-spacing: -0.085em;
+  letter-spacing: -0.052em;
 }
 
 .product-section-heading p:not(.eyebrow) {
@@ -362,7 +362,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 4vw, 4rem);
   line-height: 0.86;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.052em;
 }
 
 .intel-summary-card p:not(.eyebrow) {
@@ -462,7 +462,7 @@
   font-family: var(--font-display);
   font-size: 1.65rem;
   line-height: 0.95;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
 }
 
 .product-detail-accordion summary strong {
@@ -520,7 +520,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 4.8vw, 4.8rem);
   line-height: 0.88;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.052em;
 }
 
 .product-bundle-card p:not(.eyebrow) {
@@ -548,7 +548,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 5vw, 5.2rem);
   line-height: 0.88;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.052em;
 }
 
 .related-grid {
@@ -606,7 +606,7 @@
   font-family: var(--font-display);
   font-size: 2.3rem;
   line-height: 0.9;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.048em;
 }
 
 .related-card p {
