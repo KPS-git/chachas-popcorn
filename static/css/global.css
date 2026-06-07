@@ -472,13 +472,13 @@ body.modal-open {
   .promo-modal {
     align-items: center;
     place-items: center;
-    padding: max(72px, calc(env(safe-area-inset-top) + 24px)) 14px max(18px, env(safe-area-inset-bottom));
+    padding: max(58px, calc(env(safe-area-inset-top) + 18px)) 14px max(14px, env(safe-area-inset-bottom));
   }
 
   .promo-dialog {
     grid-template-columns: 1fr;
     width: min(100%, 420px);
-    max-height: min(74dvh, calc(100dvh - 112px));
+    max-height: min(84dvh, calc(100dvh - 82px));
     overflow-y: auto;
     border-radius: 26px;
   }
@@ -496,8 +496,8 @@ body.modal-open {
   }
 
   .promo-image {
-    min-height: 105px;
-    max-height: 150px;
+    min-height: 125px;
+    max-height: 175px;
   }
 
   .promo-image img {
