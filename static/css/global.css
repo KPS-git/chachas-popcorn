@@ -467,34 +467,37 @@ body.modal-open {
   min-height: 44px;
 }
 
+
 @media (max-width: 760px) {
   .promo-modal {
-    padding: max(58px, calc(env(safe-area-inset-top) + 18px)) 14px max(18px, env(safe-area-inset-bottom));
     align-items: center;
     place-items: center;
+    padding: max(72px, calc(env(safe-area-inset-top) + 24px)) 14px max(18px, env(safe-area-inset-bottom));
   }
 
   .promo-dialog {
     grid-template-columns: 1fr;
-    width: min(100%, 430px);
-    max-height: min(78dvh, calc(100dvh - 96px));
+    width: min(100%, 420px);
+    max-height: min(74dvh, calc(100dvh - 112px));
     overflow-y: auto;
-    border-radius: 28px;
+    border-radius: 26px;
   }
 
   .promo-close {
     position: fixed;
-    top: max(12px, env(safe-area-inset-top));
-    right: 18px;
+    top: max(14px, env(safe-area-inset-top));
+    right: 16px;
     z-index: 205;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 44px;
+    height: 44px;
   }
 
   .promo-image {
-    min-height: 120px;
-    max-height: 170px;
+    min-height: 105px;
+    max-height: 150px;
   }
 
   .promo-image img {
@@ -503,29 +506,23 @@ body.modal-open {
   }
 
   .promo-copy {
-    padding: 22px 20px 24px;
+    padding: 20px 18px 22px;
   }
 
   .promo-copy h2 {
-    font-size: clamp(2.35rem, 10vw, 3.6rem);
-    line-height: 0.88;
+    font-size: clamp(2.15rem, 9.2vw, 3.25rem);
+    line-height: 0.9;
     letter-spacing: -0.045em;
   }
 
   .promo-copy p:not(.eyebrow) {
-    margin-top: 14px;
-    font-size: 0.94rem;
-    line-height: 1.48;
+    margin-top: 12px;
+    font-size: 0.92rem;
+    line-height: 1.42;
   }
 
   .promo-form {
-    margin-top: 18px;
-  }
-
-  .promo-disclaimer {
-    margin-top: 14px !important;
-    font-size: 0.64rem !important;
-    line-height: 1.35 !important;
+    margin-top: 16px;
   }
 
   .promo-form div {
@@ -535,6 +532,12 @@ body.modal-open {
 
   .promo-form input {
     min-height: 46px;
+  }
+
+  .promo-disclaimer {
+    margin-top: 14px !important;
+    font-size: 0.64rem !important;
+    line-height: 1.35 !important;
   }
 
   .cookie-banner {
@@ -555,4 +558,3 @@ body.modal-open {
     width: 100%;
   }
 }
-
